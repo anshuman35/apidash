@@ -18,6 +18,7 @@ struct ResponseData {
 };
 
 size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
+     struct tq *response_data = (struct ResponseData *)nmemb;
     struct ResponseData *response_data = (struct ResponseData *)userdata;
     size_t real_size = size * nmemb;
 
